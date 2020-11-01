@@ -1,9 +1,9 @@
 alias zshrc="vim ~/.zshrc"
 alias rlzshrc="source ~/.zshrc"
-#alias krb5conf="sudo vim /etc/krb5.conf"
-#alias kdcconf="sudo vim /etc/krb5kdc/kdc.conf"
-alias krb5conf="sudo vim /usr/local/var/krb5.conf"
+alias krb5conf="sudo vim /etc/krb5.conf"
 alias kdcconf="sudo vim /usr/local/var/krb5kdc/kdc.conf"
+#alias kdcconf="sudo vim /etc/krb5kdc/kdc.conf"
+#alias krb5conf="sudo vim /usr/local/var/krb5.conf"
 alias restartKerberos="sudo systemctl restart krb5-admin-server.service; sudo systemctl restart krb5-kdc.service; sudo systemctl restart xinetd.service"
 alias restartXinetd="sudo systemctl restart xinetd.service"
 
