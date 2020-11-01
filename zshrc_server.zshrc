@@ -4,7 +4,7 @@ alias krb5conf="sudo vim /etc/krb5.conf"
 alias kdcconf="sudo vim /usr/local/var/krb5kdc/kdc.conf"
 #alias kdcconf="sudo vim /etc/krb5kdc/kdc.conf"
 #alias krb5conf="sudo vim /usr/local/var/krb5.conf"
-alias restartKerberos="sudo systemctl restart krb5-admin-server.service; sudo systemctl restart krb5-kdc.service; sudo systemctl restart xinetd.service"
+alias startKerberos="sudo krb5kdc; sudo kadmind"
 alias restartXinetd="sudo systemctl restart xinetd.service"
 
 alias remkrb5host="sudo kadmin.local -q 'delprinc -force host/krb5.krb5server.io'; sudo kadmin.local -q 'ktremove host/krb5.krb5server.io'"
@@ -18,5 +18,5 @@ alias addbfclient="sudo kadmin.local -q 'addprinc -pw bfclient bfclient'"
 alias addall="addkrb5host; addclienthost; addbfclient"
 
 alias resetkrbprincs="remall; addall"
-alias nukeKDCAndResetPrincs="sudo kdb5_util destroy -f; sudo kdb5_util create -s -P Xuhanwen1997; restartKerberos; resetkrbprincs"
+alias nukeKDCAndResetPrincs="sudo kdb5_util destroy -f; sudo kdb5_util create -s -P Xuhanwen1997; startKerberos; resetkrbprincs"
 
